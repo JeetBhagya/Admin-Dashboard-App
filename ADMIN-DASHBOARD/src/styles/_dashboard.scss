@@ -1,0 +1,9 @@
+.dashboard {
+    overflow-y: auto;
+    .bar {
+        height: 4rem;
+        @include flex(row, unset);
+        padding: 0 1rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.37);
+    }
+}
