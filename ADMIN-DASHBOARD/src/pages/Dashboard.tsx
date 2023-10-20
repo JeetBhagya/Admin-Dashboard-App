@@ -1,10 +1,12 @@
 import { FaRegBell } from "react-icons/fa";
 import AdminSidebar from "../components/AdminSidebar"
+
 import {BsSearch} from 'react-icons/bs';
 import profile from '../assets/profile-icon.png';
 import {HiTrendingUp, HiTrendingDown} from 'react-icons/hi'
 import data from "../assets/data.json";
 import BarCharts from "../components/BarCharts";
+
 
 
 function Dashboard() {
@@ -14,6 +16,7 @@ function Dashboard() {
       <main className="dashboard">
         <div className="bar">
           <BsSearch/>
+
           <input type="text" placeholder="Search for data, user & docs" />
           <FaRegBell/>
           <img src={profile} alt="" />
@@ -75,6 +78,7 @@ function Dashboard() {
             </div>
           </div>
         </section>
+
 
       </main>
     </div>
