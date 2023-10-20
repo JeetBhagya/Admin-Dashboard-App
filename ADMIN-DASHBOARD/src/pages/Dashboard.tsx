@@ -4,6 +4,7 @@ import {BsSearch} from 'react-icons/bs';
 import profile from '../assets/profile-icon.png';
 import {HiTrendingUp, HiTrendingDown} from 'react-icons/hi'
 import data from "../assets/data.json";
+import BarCharts from "../components/BarCharts";
 
 
 function Dashboard() {
@@ -49,6 +50,15 @@ function Dashboard() {
           <div className="revenueChart">
             <h2>Revenue & Transactions</h2>
             {/*graph here */}
+            <BarCharts
+              data1={[300, 144, 433, 655, 237, 755, 190]}
+              data2={[200, 444, 343, 556, 778, 455, 990]}
+              tittle1="Revenue"
+              tittle2="Transactions"
+              bgColor1="rgb(0, 115, 255)"
+              bgColor2="rgb(53, 235, 235)"
+
+            />
           </div>
           <div className="dashboardCategories">
             <h2>Inventory</h2>
