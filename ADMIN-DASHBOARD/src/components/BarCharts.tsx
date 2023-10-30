@@ -9,8 +9,9 @@ import {
   Legend,
   ChartData,
   ChartOptions,
+  ArcElement
 } from 'chart.js';
-import { Bar } from 'react-chartjs-2';
+import { Bar, Doughnut } from 'react-chartjs-2';
 
 
 ChartJS.register(
@@ -19,7 +20,8 @@ ChartJS.register(
   BarElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
+  ArcElement
 );
 
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
@@ -35,7 +37,7 @@ interface barChartprops{
     labels?: string[];
 }
 
-function BarCharts(
+export function BarCharts(
     {
         horizontel=false,
         data1=[],
@@ -97,4 +99,44 @@ function BarCharts(
     return <Bar options={options} data={data} />;
 }
 
-export default BarCharts
+interface DoughnutChartProps{
+    labels: string[];
+    data: number[];
+    backgroundColor: string[];
+    cutout?: number | string;
+    legends?: boolean;
+    offset?: number[];
+}
+
+export const DoughnutChart=({
+    labels, data, backgroundColor, cutout, legends=true, offset
+}: DoughnutChartProps)=>{
+    const doughnutData: ChartData<"doughnut", number[], string> = {
+        labels,
+        datasets:[{
+            data, 
+            backgroundColor, 
+            borderWidth: 0,
+            offset,
+
+        }]
+    };
+    const doughnutOptions: ChartOptions<"doughnut"> = {
+        responsive: true,
+        plugins: {
+            legend:{
+                display: legends,
+                position: "bottom",
+                labels:{
+                    padding: 40,
+                },
+            },
+        },
+        cutout,
+    };
+
+    
+    return <Doughnut data={doughnutData} options={doughnutOptions}/>;
+}
+
+// export default BarCharts
