@@ -7,7 +7,7 @@ import {HiTrendingUp, HiTrendingDown} from 'react-icons/hi'
 import data from "../assets/data.json";
 import {BarCharts, DoughnutChart} from "../components/BarCharts"
 import{BiMaleFemale} from 'react-icons/bi';
-
+import Table from "./DashboardTable"
 
 function Dashboard() {
   return (
@@ -93,7 +93,7 @@ function Dashboard() {
             </p>
           </div>
 
-          {/*Table */}
+          <Table data={data.transaction}/>
         </section>
       </main>
     </div>
