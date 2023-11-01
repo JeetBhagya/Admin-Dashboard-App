@@ -1,5 +1,5 @@
-import {useTable, Column, TableOptions} from "react-table";
-
+import {useTable, Column, TableOptions, useSortBy, usePagination} from "react-table";
+import {AiOutlineSortAscending, AiOutlineSortDescending} from "react-icons/ai"
 
 
 function TableHOC<T extends object>(
@@ -18,7 +18,7 @@ function TableHOC<T extends object>(
             getTableBodyProps,
             headerGroups,
             rows,
-            prepareRow}=useTable(options);
+            prepareRow}=useTable(options,useSortBy);
 
         return <div className={containerClassname}>
             <h2 className='heading'>{heading}</h2>
@@ -27,9 +27,13 @@ function TableHOC<T extends object>(
                     {headerGroups.map((headerGroup)=>(
                         <tr {...headerGroup.getHeaderGroupProps()}>
                             {
-                                headerGroup.headers.map(column=>(
-                                    <th {...column.getHeaderProps()}>
+                                headerGroup.headers.map((column: any)=>(
+                                    <th {...column.getHeaderProps(column.getSortByToggleProps())}>
                                         {column.render("Header")}
+                                        {" "}
+                                        {
+                                            column.isSorted && <span>{column.isSortedDesc? <AiOutlineSortDescending/>: <AiOutlineSortAscending/>}</span>
+                                        }
                                     </th>
                                 ))
                             }
