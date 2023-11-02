@@ -1,4 +1,4 @@
-import { ReactElement, useCallback, useState } from "react";
+import { ReactElement, useState } from "react";
 import AdminSidebar from "../components/AdminSidebar"
 import TableHOC from "../components/TableHOC";
 import { Column } from "react-table";
@@ -79,6 +79,13 @@ const arr: DataType[] = [
     stock: 3,
     action: <Link to="/admin/product/sajknaskd">Manage</Link>,
   },
+  {
+    photo: <img src={img} alt="Shoes" />,
+    name: "Puma Shoes Air Jordan Cook Nigga 2023",
+    price: 690,
+    stock: 3,
+    action: <Link to="/admin/product/sajknaskd">Manage</Link>,
+  },
 
   {
     photo: <img src={img2} alt="Shoes" />,
@@ -87,13 +94,7 @@ const arr: DataType[] = [
     stock: 213,
     action: <Link to="/admin/product/sdaskdnkasjdn">Manage</Link>,
   },
-  {
-    photo: <img src={img2} alt="Shoes" />,
-    name: "Macbook",
-    price: 232223,
-    stock: 213,
-    action: <Link to="/admin/product/sdaskdnkasjdn">Manage</Link>,
-  },
+  
 ];
 
 
@@ -101,14 +102,14 @@ function Products() {
 
   const [data]=useState<DataType[]>(arr)
 
-  const Table=useCallback(
+  const Table=
     TableHOC<DataType>(
       columns, 
       data,
       "dashboard-product-box",
-      "Products"
-      ),[]
-  );
+      "Products",
+      true
+      )
   return (
     <div className="adminContainer">
       <AdminSidebar/>

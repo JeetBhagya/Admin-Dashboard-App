@@ -6,7 +6,8 @@ function TableHOC<T extends object>(
     columns: Column<T>[], 
     data:T[], 
     containerClassname: string, 
-    heading: string
+    heading: string,
+    showPagination: boolean=false,
 ) {
     return function HOC(){
 
@@ -18,7 +19,18 @@ function TableHOC<T extends object>(
             getTableBodyProps,
             headerGroups,
             rows,
-            prepareRow}=useTable(options,useSortBy);
+            prepareRow,
+            pageCount,
+            state:{pageIndex},
+            nextPage,
+            previousPage,
+            canNextPage,
+            canPreviousPage
+        }=useTable(
+            options,
+            useSortBy, 
+            usePagination
+        );
 
         return <div className={containerClassname}>
             <h2 className='heading'>{heading}</h2>
@@ -57,6 +69,15 @@ function TableHOC<T extends object>(
                     }
                 </tbody>
             </table>
+            {
+                showPagination && (
+                    <div className="tablePagination">
+                        <button disabled={!canPreviousPage} onClick={previousPage}>Prev</button>
+                        <span>{`${pageIndex+1} of ${pageCount}`}</span>
+                        <button disabled={!canNextPage} onClick={nextPage}>Next</button>
+                    </div>
+                )
+            }
         </div>
     }
 }
