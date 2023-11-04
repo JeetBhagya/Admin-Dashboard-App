@@ -1,11 +1,11 @@
-.dashboard-product-box {
+.dashboardProductBox {
     background-color: white;
     padding: 2rem;
     overflow: auto;
     @include square(100%);
   }
   
-  .create-product-btn {
+  .createProductBtn {
     position: fixed;
     right: 2rem;
     top: 2rem;
@@ -19,7 +19,7 @@
     }
   }
   
-  .product-management {
+  .productManagement {
     @include flex(row, center, unset);
     padding: 4rem;
   
@@ -121,7 +121,7 @@
       }
     }
   
-    .shipping-info-card {
+    .shippingInfoCard {
       > h1 {
         text-align: center;
         @include heading(2px);
@@ -151,7 +151,7 @@
     }
   }
   
-  .transaction-product-card {
+  .transactionProductCard {
     @include flex(row, unset, center, 1rem);
   
     > img {

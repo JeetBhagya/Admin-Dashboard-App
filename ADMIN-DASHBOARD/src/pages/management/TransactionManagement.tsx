@@ -1,6 +1,11 @@
+import AdminSidebar from "../../components/AdminSidebar";
+
 const TransactionManagement = () => {
   return (
-    <div>TransactionManagement</div>
+    <div className="adminContainer">
+        <AdminSidebar/>
+      <main className="transactionManagement">New product</main>
+    </div>
   )
 }
 export default TransactionManagement;
