@@ -11,8 +11,10 @@ const NewProduct = lazy(()=>import("./pages/management/NewProduct")) ;
 const ProductManagement = lazy(()=>import("./pages/management/ProductManagement")) ;
 const TransactionManagement = lazy(()=>import("./pages/management/TransactionManagement")) ;
 const Bar = lazy(()=>import("./pages/charts/Bar")) ;
-const Pie = lazy(()=>import("./pages/charts/pie")) ;
+const Pie = lazy(()=>import("./pages/charts/Pie")) ;
 const Line = lazy(()=>import("./pages/charts/Line")) ;
+
+const StopWatch=lazy(()=>import("./pages/applications/stopwatch")) ;
 
 const App=()=> {
   return (
@@ -27,12 +29,12 @@ const App=()=> {
           <Route path="/admin/chart/bar" element={<Bar/>}/>
           <Route path="/admin/chart/pie" element={<Pie/>}/>
           <Route path="/admin/chart/line" element={<Line/>}/>
-          {/*apps */}
           {/*management */}
           <Route path="/admin/product/new" element={<NewProduct/>}/>
           <Route path="/admin/product/:id" element={<ProductManagement/>}/>
           <Route path="/admin/transaction/:id" element={<TransactionManagement/>}/>
-
+          {/*apps */}
+          <Route path="/admin/apps/stopwatch" element={<StopWatch/>}/>
         </Routes>
       </Suspense>
     </Router>
