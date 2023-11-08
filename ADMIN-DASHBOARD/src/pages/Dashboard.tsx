@@ -5,7 +5,7 @@ import {BsSearch} from 'react-icons/bs';
 import profile from '../assets/profile-icon.png';
 import {HiTrendingUp, HiTrendingDown} from 'react-icons/hi'
 import data from "../assets/data.json";
-import {BarCharts, DoughnutChart} from "../components/BarCharts"
+import {BarChart, DoughnutChart} from "../components/BarCharts"
 import{BiMaleFemale} from 'react-icons/bi';
 import Table from "./DashboardTable"
 
@@ -53,13 +53,13 @@ function Dashboard() {
           <div className="revenueChart">
             <h2>Revenue & Transactions</h2>
             {/*graph here */}
-            <BarCharts
-              data1={[300, 144, 433, 655, 237, 755, 190]}
-              data2={[200, 444, 343, 556, 778, 455, 990]}
-              tittle1="Revenue"
-              tittle2="Transactions"
-              bgColor1="rgb(0, 115, 255)"
-              bgColor2="rgb(53, 235, 235)"
+            <BarChart
+              data_1={[300, 144, 433, 655, 237, 755, 190]}
+              data_2={[200, 444, 343, 556, 778, 455, 990]}
+              title_1="Revenue"
+              title_2="Transactions"
+              bgColor_1="rgb(0, 115, 255)"
+              bgColor_2="rgb(53, 235, 235)"
 
             />
           </div>
