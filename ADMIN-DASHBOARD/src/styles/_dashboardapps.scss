@@ -40,7 +40,7 @@
         transform-style: preserve-3d;
         transition: all 0.5s;
         > div {
-          border-radius: 50%;
+          border-radius: 70%;
           @include square(100%);
           position: absolute;
           display: grid;
@@ -50,16 +50,16 @@
           backface-visibility: hidden;
           filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.521));
           &:first-of-type {
-            background-image: url("../assets/images/heads.png");
+            background-image: url("../assets/coin/head.png");
           }
           &:last-of-type {
-            background-image: url("../assets/images/tails.png");
+            background-image: url("../assets/coin/tails.png");
             transform: rotateY(-180deg);
           }
         }
       }
   
-      .coupon-form {
+      .couponForm {
         @include grid(2fr 1fr, 2rem);
         max-width: 30rem;
         width: 100%;
