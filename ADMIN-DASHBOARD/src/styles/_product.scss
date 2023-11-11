@@ -3,6 +3,10 @@
     padding: 2rem;
     overflow: auto;
     @include square(100%);
+    >h2{
+      width: 50%;
+      margin: 0 auto;
+    }
   }
   
   .createProductBtn {
@@ -38,6 +42,8 @@
       > h2 {
         @include heading(2px);
         text-align: center;
+        
+
       }
   
       > img {

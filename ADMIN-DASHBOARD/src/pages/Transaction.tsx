@@ -75,8 +75,8 @@ function Transaction() {
     TableHOC<DataType>(
       columns,
       data,
-      "dashboard-product-box",
-      "Customers",
+      "dashboardProductBox",
+      "Transactions",
       true
     ),
     []

@@ -94,7 +94,7 @@ const Customers = () => {
     TableHOC<DataType>(
       columns,
       data,
-      "dashboard-product-box",
+      "dashboardProductBox",
       "Customers",
       true
     ),

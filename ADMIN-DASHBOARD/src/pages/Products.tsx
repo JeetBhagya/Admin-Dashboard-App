@@ -106,7 +106,7 @@ function Products() {
     TableHOC<DataType>(
       columns, 
       data,
-      "dashboard-product-box",
+      "dashboardProductBox",
       "Products",
       true
       )

@@ -7,7 +7,7 @@ const Pie = () => {
     <div className="adminContainer">
       <AdminSidebar />
       <main className="chartContainer">
-        <h1>Pie & Doughnut Charts</h1>
+        <h1>Pie Charts</h1>
         <section>
           <div>
             <PieChart
